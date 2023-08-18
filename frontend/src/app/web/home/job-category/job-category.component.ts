@@ -7,18 +7,16 @@ import { GetDataService } from '../../services/get-data.service';
 })
 export class JobCategoryComponent {
   categoreis!: any[];
-  constructor(private getData: GetDataService) {
+  constructor(private _getData: GetDataService) {
     this.getDatacall();
   }
   getDatacall() {
-    console.log(
-      this.getData.getData().subscribe({
-        next: (res) => {
-          // this.categoreis = res.categoreis;
-          this.categoreis = res;
-          console.log(res);
-        },
-      })
-    );
+    this._getData.getCategories().subscribe({
+      next: (res) => {
+        // this.categoreis = res.categoreis;
+        this.categoreis = res;
+        console.log(res);
+      },
+    });
   }
 }

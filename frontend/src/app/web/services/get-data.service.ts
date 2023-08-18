@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,9 @@ import { Observable } from 'rxjs';
 export class GetDataService {
   constructor(private _http: HttpClient) {}
 
-  getData(): Observable<any> {
-    return this._http.get('http://localhost/Angular%20Project/Angular%20Project%20IDB%20Final/API/test.php');
+  //Getting The categories List
+  getCategories(): Observable<any> {
+    let getCategoriesEndpoint = '/categories/getCategories.php';
+    return this._http.get(environment.apiUrl + getCategoriesEndpoint);
   }
 }
