@@ -1,11 +1,6 @@
 <?php
-// Db Connection
-$dbhost = "skmiraj.online";
-$dbuser = "skmiraj";
-$dbpass = "SWKbBT.LjXo-8Tj6";
-$dbname = "skmiraj_angulardb";
-
-$con = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+// Importing DB
+require_once("./../../database/config.php");
 
 
 if (!$con->connect_error) {
