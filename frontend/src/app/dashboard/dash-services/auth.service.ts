@@ -1,19 +1,24 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class GetDataService {
+export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
 
-  //Getting The categories List
-  getCategories(): Observable<any> {
-    let getCategoriesEndpoint = '/categories/getCategories.php';
-    return this.http.get(environment.apiUrl + getCategoriesEndpoint);
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role_id');
   }
 
   login(data: any) {
@@ -24,8 +29,9 @@ export class GetDataService {
       next: (res: any) => {
         if (res.login == 'Success') {
           localStorage.setItem('token', res.token);
+          localStorage.setItem('role_id', res.role_id);
           this.router.navigate(['/dashboard']);
-          console.log('save on locastorage');
+          console.log('saved on locastorage');
           console.log(res.token);
         } else {
           console.log('failed');

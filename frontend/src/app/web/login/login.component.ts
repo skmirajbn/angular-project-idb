@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { GetDataService } from '../services/get-data.service';
+import { AuthService } from 'src/app/dashboard/dash-services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ import { GetDataService } from '../services/get-data.service';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder, private _getData: GetDataService) {
+  constructor(private fb: FormBuilder, private _auth: AuthService) {
     this.loginForm = this.fb.group({
       username: '',
       password: '',
@@ -20,6 +20,6 @@ export class LoginComponent {
     let formData = this.loginForm.value;
 
     let params = new HttpParams().set('username', formData.username).set('password', formData.password);
-    this._getData.login(params.toString());
+    this._auth.login(params.toString());
   }
 }

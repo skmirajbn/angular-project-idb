@@ -1,6 +1,8 @@
 <?php
 // Importing DB
-require_once("./../../database/config.php");
+require_once("../../database/config.php");
+
+
 if (!$con->connect_error) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Getting the Category List
@@ -14,8 +16,14 @@ if (!$con->connect_error) {
         $categories = json_encode($categories, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         // print_r($categories);
         echo $categories;
+    } else {
+        echo "not getting get method";
     }
+} else {
+    echo "db error";
 }
+
+
 
 
 ?>

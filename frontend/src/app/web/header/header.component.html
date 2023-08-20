@@ -29,11 +29,20 @@
         </h1>
       </div>
       <!-- Menu -->
-      <div id="web-menu" class="space-x-2">
+      <div *ngIf="!isLoggedIn()" id="web-menu" class="space-x-2">
         <a class="bg-green-800 inline-block px-4 rounded-md text-white leading-8" routerLink="login">সাইন ইন</a>
         <span>অথবা</span>
         <a class="bg-orange-600 inline-block px-4 rounded-md text-white leading-8" routerLink="create-account/candidate">একাউন্ট তৈরী করুন</a>
         <a href="">যোগাযোগ</a>
+      </div>
+      <div *ngIf="isLoggedIn()" id="web-menu" class="flex items-center space-x-4">
+        <h3><i class="fa-regular fa-user"></i> প্রফাইল</h3>
+        <h3 class="bg-green-800 leading-8 px-2 rounded-md text-white">
+          <a routerLink="./dashboard"><i class="fa-solid fa-ticket"></i> ড্যাসবোর্ড</a>
+        </h3>
+        <h3 class="text-white bg-red-500 leading-8 inline-block px-3 rounded-md" (click)="logOut()"><i class="fa-solid fa-right-from-bracket"></i> লগ আউট</h3>
+        <img class="w-10 h-10 rounded-full object-cover" src="./assets/img/avatar.jpg" alt="" />
+        <i class="fa-solid fa-sort-down"></i>
       </div>
     </div>
   </div>

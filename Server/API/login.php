@@ -29,6 +29,7 @@ if (isset($_POST['username'])) {
         $userData = array(
             'login' => 'Success',
             'token' => $token,
+            'role_id' => $role_id,
         );
         $userData = json_encode($userData);
         echo $userData;
