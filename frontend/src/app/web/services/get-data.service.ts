@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class GetDataService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   //Getting The categories List
   getCategories(): Observable<any> {
@@ -16,9 +17,12 @@ export class GetDataService {
   }
 
   login(data: any) {
-    this.http.post(environment.apiUrl + '/login.php', { data }).subscribe({
-      next: function (res: any) {
-        localStorage.setItem('token', res.token);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+    this.http.post(environment.apiUrl + '/login.php', data, { headers }).subscribe({
+      next: (res: any) => {
+        console.log(res.login);
       },
     });
   }

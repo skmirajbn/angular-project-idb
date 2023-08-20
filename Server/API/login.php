@@ -17,8 +17,8 @@ if (isset($_POST['username'])) {
     $result = $smtp->get_result();
     //Fetch the user data
     $user = $result->fetch_assoc();
-    $dbHashedPass = password_hash($user['user_password'], PASSWORD_DEFAULT);
-    if ($user && password_verify($password, $dbHashedPass)) {
+    // $dbHashedPass = password_hash($user['user_password'], PASSWORD_DEFAULT);
+    if ($user && $password == $user['user_password']) {
         $user_id = $user['user_id'];
         $user_username = $user['user_username'];
         $user_email = $user['user_email'];
@@ -34,10 +34,14 @@ if (isset($_POST['username'])) {
         echo $userData;
 
     } else {
-        return false;
+        $data = array("login" => "Failed");
+        $data = json_encode($data);
+        echo $data;
     }
 } else {
-    return false;
+    $data = array("login" => "Post Failed");
+    $data = json_encode($data);
+    echo $data;
 }
 
 

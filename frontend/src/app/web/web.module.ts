@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CandidateCreateAccountComponent } from './candidate-create-account/candidate-create-account.component';
 import { EmployeerCreateAccountComponent } from './employeer-create-account/employeer-create-account.component';
@@ -21,7 +22,7 @@ import { WebComponent } from './web/web.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, WebComponent, HomeComponent, AboutUsComponent, JobCategoryComponent, SidebarComponent, SpecialSkilledCategoryComponent, JobSpecialCategoryComponent, JobSearchComponent, JobsComponent, JobsSearchResultComponent, JobsFilterComponent, LoginComponent, CandidateCreateAccountComponent, EmployeerCreateAccountComponent],
-  imports: [CommonModule, WebRoutingModule, HttpClientModule],
+  imports: [CommonModule, WebRoutingModule, HttpClientModule, ReactiveFormsModule],
   exports: [WebComponent],
 })
 export class WebModule {}

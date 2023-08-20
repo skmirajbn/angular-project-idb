@@ -5,7 +5,7 @@ require './../vendor/autoload.php';
 use Firebase\JWT\JWT;
 
 class Auth {
-    private static $key = 'My Secret Key';
+    private static $key = 'jobportalapplication';
     private static $expiration_time = 3600;
     private static $jwt_coding = 'HS256';
 

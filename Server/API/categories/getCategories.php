@@ -1,8 +1,6 @@
 <?php
 // Importing DB
 require_once("./../../database/config.php");
-
-
 if (!$con->connect_error) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Getting the Category List
@@ -15,7 +13,6 @@ if (!$con->connect_error) {
         }
         $categories = json_encode($categories, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         // print_r($categories);
-        header("Access-Control-Allow-Origin: *");
         echo $categories;
     }
 }
