@@ -25,7 +25,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
     });
-    this.http.post(environment.apiUrl + '/login.php', data, { headers }).subscribe({
+    this.http.post(environment.apiUrl + 'login.php', data, { headers }).subscribe({
       next: (res: any) => {
         if (res.login == 'Success') {
           localStorage.setItem('token', res.token);
