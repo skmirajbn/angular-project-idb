@@ -1,0 +1,45 @@
+<section id="web-job-category" class="">
+  <div class="space-y-4 bg-white my-6 py-6 px-12 rounded-md shadow-lg">
+    <!-- Heading -->
+    <div class="flex justify-between">
+      <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-user-plus"></i> ইউজার যোগ</h2>
+    </div>
+    <!-- Category List -->
+    <div class="text-gray-700 gap-y-3">
+      <form class="space-y-4" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+        <div class="flex flex-col">
+          <label class="text-lg" for="">নাম :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="নাম প্রবেশ করুন" name="name" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">ইমেইল :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="ইমেইল প্রবেশ করুন" name="email" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">ইউজারনেম :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="ইউজারনেম প্রবেশ করুন" name="username" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">পাসওয়ার্ড :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="পাসওয়ার্ড প্রবেশ করুন" name="password" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">রোল :</label>
+          <select name="role" [(ngModel)]="selectedRole">
+            <option disabled selected value="0">রোল সিলেক্ট করুন</option>
+            <option value="1">এডমিন</option>
+            <option value="2">ক্যান্ডিডেট</option>
+            <option value="3">চাকুরিদাতা</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">ছবি :</label>
+          <input class="py-1 px-2 rounded-md" type="file" name="image" (change)="onFileSelected($event)" />
+        </div>
+        <h2 class="text-center text-2xl text-green-700" *ngIf="loading">Submitting..</h2>
+        <h2 class="text-center text-2xl text-green-700">{{ message }}</h2>
+        <button class="block mx-auto bg-cyan-700 text-white py-2 px-4 rounded-md"><i class="fa-solid fa-plus"></i> যোগ করুন</button>
+      </form>
+    </div>
+  </div>
+</section>

@@ -2,7 +2,10 @@
   <div class="bg-gray-300 my-6 rounded-md shadow-lg overflow-hidden">
     <!-- Heading -->
     <div class="flex justify-between bg-gray-50 px-12 py-5">
-      <h2 class="text-lg font-bold text-black"><i class="fa-solid fa-bars"></i> এডমিন কন্টোল প্যানেল</h2>
+      <h2 class="text-lg font-bold text-black"><i class="fa-solid fa-bars"></i> কন্টোল প্যানেল</h2>
+      <a routerLink="/dashboard"
+        ><h2 class="text-lg bg-cyan-700 px-2 py-1 text-white rounded-md"><i class="fa-solid fa-ticket"></i> ড্যাসবোর্ড</h2></a
+      >
     </div>
     <!-- Category List -->
     <div class="text-white">
@@ -10,8 +13,8 @@
         <input type="radio" name="my-accordion-2" />
         <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-users inline-block pr-2"></i> ইউজার</div>
         <div class="collapse-content bg-gray-200 space-y-5 pt-6 px-0 text-black">
-          <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-user-plus inline-block pr-2"></i> ইউজার যোগ</a>
-          <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-eye inline-block pr-2"></i> ইউজার দেখুন</a>
+          <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" routerLink="add-user"><i class="fa-solid fa-user-plus inline-block pr-2"></i> ইউজার যোগ</a>
+          <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" routerLink="view-users"><i class="fa-solid fa-eye inline-block pr-2"></i> ইউজার দেখুন</a>
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-trash-can-arrow-up inline-block pr-2"></i> ইউজার রিস্টোর করুন</a>
         </div>
       </div>
@@ -35,7 +38,7 @@
       </div>
       <div class="collapse collapse-arrow overflow-visible grid-rows-[35px_0fr]">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-folder-tree inline-block pr-2"></i> কোম্পানি</div>
+        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-industry inline-block pr-2"></i> কোম্পানি</div>
         <div class="collapse-content bg-gray-200 space-y-5 pt-6 px-0 text-black">
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-plus inline-block pr-2"></i> কোম্পানি যোগ</a>
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-eye inline-block pr-2"></i> কোম্পানি দেখুন</a>
@@ -44,7 +47,7 @@
       </div>
       <div class="collapse collapse-arrow overflow-visible grid-rows-[35px_0fr]">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-folder-tree inline-block pr-2"></i> সিভি</div>
+        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-file-invoice inline-block pr-2"></i> সিভি</div>
         <div class="collapse-content bg-gray-200 space-y-5 pt-6 px-0 text-black">
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-plus inline-block pr-2"></i> সিভি যোগ</a>
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-eye inline-block pr-2"></i> সিভি দেখুন</a>
@@ -53,7 +56,7 @@
       </div>
       <div class="collapse collapse-arrow overflow-visible grid-rows-[35px_0fr]">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-folder-tree inline-block pr-2"></i> রোল</div>
+        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-lock inline-block pr-2"></i> রোল</div>
         <div class="collapse-content bg-gray-200 space-y-5 pt-6 px-0 text-black">
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-plus inline-block pr-2"></i> রোল যোগ</a>
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-eye inline-block pr-2"></i> রোল দেখুন</a>
@@ -62,7 +65,7 @@
       </div>
       <div class="collapse collapse-arrow overflow-visible grid-rows-[35px_0fr]">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-folder-tree inline-block pr-2"></i> ভিডিও রিজিওমি</div>
+        <div class="collapse-title text-xl font-medium text-black bg-gray-100 px-12"><i class="fa-solid fa-photo-film inline-block pr-2"></i> ভিডিও রিজিওমি</div>
         <div class="collapse-content bg-gray-200 space-y-5 pt-6 px-0 text-black">
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-plus inline-block pr-2"></i> ভিডিও রিজিওমি যোগ</a>
           <a class="block hover:bg-gray-300 px-12 py-4 m-0 ac-link" href="#"><i class="fa-solid fa-eye inline-block pr-2"></i> ভিডিও রিজিওমি দেখুন</a>
