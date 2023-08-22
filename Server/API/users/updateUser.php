@@ -24,9 +24,9 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['username'])
         }
     }
     if ($imageName != '') {
-        $sql = "UPDATE users SET user_name = '$name', user_email = '$email', user_username = '$username', user_password = '$password', role_id ='$role', user_photo = '$imageName'";
+        $sql = "UPDATE users SET user_name = '$name', user_email = '$email', user_username = '$username', user_password = '$password', role_id ='$role', user_photo = '$imageName' WHERE user_id =$id";
     } else {
-        $sql = "UPDATE users SET user_name = '$name', user_email = '$email', user_username = '$username', user_password = '$password', role_id ='$role'";
+        $sql = "UPDATE users SET user_name = '$name', user_email = '$email', user_username = '$username', user_password = '$password', role_id ='$role' WHERE user_id =$id";
     }
 
     $query = $con->query($sql);
