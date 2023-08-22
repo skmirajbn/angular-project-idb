@@ -4,7 +4,10 @@ import { AdminDashboardSummaryComponent } from './admin-dashboard/admin-dashboar
 import { AddUserComponent } from './admin-dashboard/users/add-user/add-user.component';
 import { UpdateUserComponent } from './admin-dashboard/users/update-user/update-user.component';
 import { ViewUsersComponent } from './admin-dashboard/users/view-users/view-users.component';
+import { CandidateDashboardComponent } from './candidate-dashboard/candidate-dashboard.component';
 import { AuthGuard } from './dash-services/auth.guard';
+import { CandidateGurad } from './dash-services/candidate.guard';
+import { EmployeerGuard } from './dash-services/employeer.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -30,6 +33,16 @@ const routes: Routes = [
         component: UpdateUserComponent,
       },
     ],
+  },
+  {
+    path: 'candidate',
+    component: CandidateDashboardComponent,
+    canActivate: [CandidateGurad],
+  },
+  {
+    path: 'employeer',
+    component: CandidateDashboardComponent,
+    canActivate: [EmployeerGuard],
   },
 ];
 

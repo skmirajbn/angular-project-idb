@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./update-user.component.css'],
 })
 export class UpdateUserComponent {
+  userImage!: any;
   userData!: any;
   user_id!: string;
   loading: boolean = false;
@@ -28,6 +29,14 @@ export class UpdateUserComponent {
   onFileSelected(event: any): void {
     console.log(event.target.files[0]);
     this.selectedImage = event.target.files[0];
+
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      this.userImage = e.target?.result;
+    };
+    if (this.selectedImage) {
+      reader.readAsDataURL(this.selectedImage);
+    }
   }
 
   getUserData() {
@@ -37,6 +46,7 @@ export class UpdateUserComponent {
       next: (res: any) => {
         this.userData = res;
         this.selectedRole = res.role_id;
+        this.userImage = environment.imagePath + res.user_photo;
         console.log(res);
       },
       error: (err) => {

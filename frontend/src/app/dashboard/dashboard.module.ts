@@ -11,9 +11,11 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdateUserComponent } from './admin-dashboard/users/update-user/update-user.component';
+import { CandidateDashboardComponent } from './candidate-dashboard/candidate-dashboard.component';
+import { EmployeerDashboardComponent } from './employeer-dashboard/employeer-dashboard.component';
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent],
+  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent, CandidateDashboardComponent, EmployeerDashboardComponent],
   imports: [CommonModule, DashboardRoutingModule, FormsModule],
 })
 export class DashboardModule {}

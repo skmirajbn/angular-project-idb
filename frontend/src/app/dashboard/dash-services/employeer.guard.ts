@@ -5,10 +5,10 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class EmployeerGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
   canActivate(): boolean {
-    if (localStorage.getItem('role_id') == '1') {
+    if (localStorage.getItem('role_id') == '3') {
       return true;
     } else {
       this.authService.logout();

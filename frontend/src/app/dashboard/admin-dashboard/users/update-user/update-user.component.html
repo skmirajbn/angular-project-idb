@@ -35,6 +35,7 @@
         <div class="flex flex-col">
           <label class="text-lg" for="">ছবি :</label>
           <input class="py-1 px-2 rounded-md" type="file" name="image" (change)="onFileSelected($event)" />
+          <img class="w-28" src="{{ userImage }}" />
         </div>
         <h2 class="text-center text-2xl text-green-700" *ngIf="loading">Submitting..</h2>
         <h2 class="text-center text-2xl text-green-700">{{ message }}</h2>

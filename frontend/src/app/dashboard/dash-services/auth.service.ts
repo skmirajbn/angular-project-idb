@@ -19,6 +19,8 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('role_id');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('user_photo');
   }
 
   login(data: any) {
@@ -30,7 +32,17 @@ export class AuthService {
         if (res.login == 'Success') {
           localStorage.setItem('token', res.token);
           localStorage.setItem('role_id', res.role_id);
-          this.router.navigate(['/dashboard']);
+          localStorage.setItem('user_id', res.user_id);
+          localStorage.setItem('user_photo', res.user_photo);
+          if (res.role_id == '1') {
+            this.router.navigate(['/dashboard']);
+          }
+          if (res.role_id == '2') {
+            this.router.navigate(['/dashboard/candidate']);
+          }
+          if (res.role_id == '3') {
+            this.router.navigate(['/dashboard/employeer']);
+          }
           console.log('saved on locastorage');
           console.log(res.token);
         } else {
