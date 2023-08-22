@@ -1,0 +1,23 @@
+<section id="web-job-category" class="">
+  <div class="space-y-6 bg-white my-6 py-6 px-12 rounded-md shadow-lg">
+    <!-- Heading -->
+    <div class="flex justify-between">
+      <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-briefcase"></i> চাকুরির পোস্ট</h2>
+    </div>
+    <!-- জব পোস্ট  container-->
+    <div class="space-y-6">
+      <!-- Single job post -->
+      <div *ngFor="let job of jobs" class="bg-gray-100 rounded-md overflow-hidden space-y-2 pb-4">
+        <h3 class="text-xl bg-blue-800 text-white px-4 py-2">{{ job.job_title }}</h3>
+        <h4><span class="font-bold px-4">বেতনঃ</span> {{ job.job_salary }}</h4>
+        <h4><span class="font-bold px-4">ঠিকানাঃ</span> {{ job.job_location }}</h4>
+        <h4><span class="font-bold px-4">কোম্পানিঃ </span>{{ job.company_name }}</h4>
+
+        <!-- Button For Candidate -->
+        <a class="block" routerLink="/jobs/job/{{ job.job_id }}"
+          ><h4 class="bg-blue-900 text-white inline-block px-4 py-2 mx-4 rounded-md">আরো দেখুন <i class="fa-solid fa-eye inline-block pl-2"></i></h4
+        ></a>
+      </div>
+    </div>
+  </div>
+</section>

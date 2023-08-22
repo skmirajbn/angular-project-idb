@@ -1,0 +1,48 @@
+<section id="web-job-category" class="w-full">
+  <div class="space-y-4 bg-white my-6 py-6 rounded-md shadow-lg w-full">
+    <!-- এডমিন সারমর্ম -->
+    <div class="space-y-4 px-12 pb-12">
+      <!-- Heading -->
+      <div class="flex justify-between">
+        <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-chart-simple"></i> এডমিন সারমর্ম</h2>
+      </div>
+      <!-- cards List -->
+      <div class="grid grid-cols-4 gap-3 text-gray-700 gap-y-3">
+        <!-- Card -->
+        <div class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-12 px-5 rounded-md shadow-lg shadow-blue-700">
+          <h5 class="text-2xl">এপ্লাইড জব</h5>
+          <span class="text-xl"><i class="fa-solid fa-briefcase"></i> ৫০০</span>
+        </div>
+        <div class="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white text-center py-12 px-5 rounded-md shadow-lg shadow-cyan-500">
+          <h5 class="text-2xl">সিলেক্টেড</h5>
+          <span class="text-xl"><i class="fa-solid fa-user-group"></i> ৫০০</span>
+        </div>
+        <div class="bg-gradient-to-r from-amber-300 to-amber-400 text-white text-center py-12 px-5 rounded-md shadow-lg shadow-amber-500">
+          <h5 class="text-2xl">ইন্টারভিউ</h5>
+          <span class="text-xl"><i class="fa-solid fa-handshake-simple"></i> ৫০০</span>
+        </div>
+        <div class="bg-gradient-to-r from-pink-300 to-pink-400 text-white text-center py-12 px-5 rounded-md shadow-lg shadow-pink-500">
+          <h5 class="text-2xl">বাতিল</h5>
+          <span class="text-xl"><i class="fa-solid fa-folder-tree"></i> ৫০০</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- All company job applications -->
+    <div class="px-12 space-y-4">
+      <h3 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-users"></i> আবেদনকৃত ক্যান্ডিডেট</h3>
+      <!-- sing candidate -->
+      <div *ngFor="let app of applications" class="space-y-4 flex items-center space-x-6 bg-gray-200 px-4 py-4 rounded-md">
+        <div>
+          <h3><span class="font-bold">ক্যান্ডিডেটের নামঃ</span> {{ app.applicant_name }}</h3>
+          <h3><span class="font-bold">ইমেইলঃ</span> {{ app.applicant_email }}</h3>
+          <h3><span class="font-bold">চাকুরির শিরনামঃ</span> {{ app.job_title }}</h3>
+        </div>
+        <img class="w-12 h-12 object-cover rounded-md" src="{{ imagePath + app.applicant_photo }}" alt="" />
+        <a href="{{ cvPath + app.applicant_cv_file }}"
+          ><span *ngIf="app.applicant_cv_file" class="bg-cyan-700 text-white inline-block px-4 leading-8 rounded-md"><i class="fa-solid fa-file-pdf"></i> Download CV</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>

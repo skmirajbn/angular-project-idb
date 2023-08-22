@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CandidateCreateAccountComponent } from './candidate-create-account/candidate-create-account.component';
 import { EmployeerCreateAccountComponent } from './employeer-create-account/employeer-create-account.component';
 import { HomeComponent } from './home/home.component';
+import { JobPostsComponent } from './jobs/job-posts/job-posts.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { SingleJobPostComponent } from './jobs/single-job-post/single-job-post.component';
 import { LoginComponent } from './login/login.component';
 import { WebComponent } from './web/web.component';
 
@@ -19,6 +21,16 @@ const routes: Routes = [
       {
         path: 'jobs',
         component: JobsComponent,
+        children: [
+          {
+            path: '',
+            component: JobPostsComponent,
+          },
+          {
+            path: 'job/:id',
+            component: SingleJobPostComponent,
+          },
+        ],
       },
       {
         path: 'login',

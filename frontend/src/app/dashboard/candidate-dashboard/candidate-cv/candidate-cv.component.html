@@ -1,0 +1,27 @@
+<section id="web-job-category" class="w-full">
+  <div class="space-y-4 bg-white my-6 py-6 rounded-md shadow-lg w-full">
+    <!-- এডমিন সারমর্ম -->
+    <form #cvUpload="ngForm" (ngSubmit)="uploadCv()">
+      <div class="space-y-4 px-12 pb-12">
+        <!-- Heading -->
+        <div class="flex justify-between">
+          <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-chart-simple"></i> আমার সিভি</h2>
+        </div>
+        <div class="flex justify-center text-8xl">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h3 *ngIf="!cvTable.cv_file" class="text-center"><span class="bg-gray-900 text-white inline-block px-4 leading-9 rounded-md">সিভি আপলোড নেই</span></h3>
+        <a href="{{ cvPath + cvTable.cv_file }}" class="block"
+          ><h3 *ngIf="cvTable.cv_file" class="text-center"><span class="bg-blue-900 text-white inline-block px-4 leading-9 rounded-md">সিভি ডাউনলোড করুন</span></h3></a
+        >
+        <div class="text-center space-y-4">
+          <h3 class="text-center"><span class="text-blue-900">সিভি আপলোড করুন</span></h3>
+          <input class="bg-blue-200" type="file" (change)="addCv($event)" />
+        </div>
+        <button class="block mx-auto bg-blue-900 text-white text-lg px-4 py-1 rounded-md" type="submit">আপলোড</button>
+        <h3 class="text-center text-green-600" *ngIf="loading">Submitting..</h3>
+        <h3 class="text-center text-green-600">{{ message }}</h3>
+      </div>
+    </form>
+  </div>
+</section>
