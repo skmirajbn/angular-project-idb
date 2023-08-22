@@ -9,12 +9,20 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  dahsboardLink!: any;
   profilePhoto: any = './assets/img/avatar.jpg';
   constructor(private _auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     if (localStorage.getItem('user_photo')) {
       this.profilePhoto = environment.imagePath + localStorage.getItem('user_photo');
+    }
+    if (localStorage.getItem('role_id') == '1') {
+      this.dahsboardLink = '/dashboard';
+    } else if (localStorage.getItem('role_id') == '2') {
+      this.dahsboardLink = '/dashboard/candidate';
+    } else {
+      this.dahsboardLink = '/dashboard/employeer';
     }
   }
 

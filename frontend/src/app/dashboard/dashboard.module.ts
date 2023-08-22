@@ -13,9 +13,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdateUserComponent } from './admin-dashboard/users/update-user/update-user.component';
 import { CandidateDashboardComponent } from './candidate-dashboard/candidate-dashboard.component';
 import { EmployeerDashboardComponent } from './employeer-dashboard/employeer-dashboard.component';
+import { CandidateDashboardSummaryComponent } from './candidate-dashboard/candidate-dashboard-summary/candidate-dashboard-summary.component';
+import { CandidateDashboardSidebarComponent } from './candidate-dashboard/candidate-dashboard-sidebar/candidate-dashboard-sidebar.component';
+import { EmployeerDashboardSidebarComponent } from './employeer-dashboard/employeer-dashboard-sidebar/employeer-dashboard-sidebar.component';
+import { EmployeerDashboardSummaryComponent } from './employeer-dashboard/employeer-dashboard-summary/employeer-dashboard-summary.component';
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent, CandidateDashboardComponent, EmployeerDashboardComponent],
+  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent, CandidateDashboardComponent, EmployeerDashboardComponent, CandidateDashboardSummaryComponent, CandidateDashboardSidebarComponent, EmployeerDashboardSidebarComponent, EmployeerDashboardSummaryComponent],
   imports: [CommonModule, DashboardRoutingModule, FormsModule],
 })
 export class DashboardModule {}
