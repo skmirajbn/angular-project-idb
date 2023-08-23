@@ -9,6 +9,7 @@ import { AuthService } from '../dash-services/auth.service';
   styleUrls: ['./dashboard-header.component.css'],
 })
 export class DashboardHeaderComponent {
+  userName = localStorage.getItem('user_name');
   roleName: any = '';
   profilePhoto: any = './assets/img/avatar.jpg';
   constructor(private _auth: AuthService, private router: Router) {}

@@ -21,9 +21,10 @@ import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web/web.component';
 import { JobPostsComponent } from './jobs/job-posts/job-posts.component';
 import { SingleJobPostComponent } from './jobs/single-job-post/single-job-post.component';
+import { CoverPhotoComponent } from './home/cover-photo/cover-photo.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, WebComponent, HomeComponent, AboutUsComponent, JobCategoryComponent, SidebarComponent, SpecialSkilledCategoryComponent, JobSpecialCategoryComponent, JobSearchComponent, JobsComponent, JobsSearchResultComponent, JobsFilterComponent, LoginComponent, CandidateCreateAccountComponent, EmployeerCreateAccountComponent, JobPostsComponent, SingleJobPostComponent],
+  declarations: [HeaderComponent, FooterComponent, WebComponent, HomeComponent, AboutUsComponent, JobCategoryComponent, SidebarComponent, SpecialSkilledCategoryComponent, JobSpecialCategoryComponent, JobSearchComponent, JobsComponent, JobsSearchResultComponent, JobsFilterComponent, LoginComponent, CandidateCreateAccountComponent, EmployeerCreateAccountComponent, JobPostsComponent, SingleJobPostComponent, CoverPhotoComponent],
   imports: [CommonModule, WebRoutingModule, HttpClientModule, ReactiveFormsModule],
   exports: [WebComponent],
 })

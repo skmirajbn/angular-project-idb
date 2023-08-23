@@ -20,6 +20,7 @@ if (isset($_POST['username'])) {
     // $dbHashedPass = password_hash($user['user_password'], PASSWORD_DEFAULT);
     if ($user && $password == $user['user_password']) {
         $user_id = $user['user_id'];
+        $user_name = $user['user_name'];
         $user_username = $user['user_username'];
         $user_email = $user['user_email'];
         $user_photo = $user['user_photo'];
@@ -32,6 +33,7 @@ if (isset($_POST['username'])) {
             'role_id' => $role_id,
             'user_id' => $user_id,
             'user_photo' => $user_photo,
+            'user_name' => $user_name,
         );
         $userData = json_encode($userData);
         echo $userData;

@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  userName = localStorage.getItem('user_name');
   dahsboardLink!: any;
   profilePhoto: any = './assets/img/avatar.jpg';
   constructor(private _auth: AuthService, private router: Router) {}
