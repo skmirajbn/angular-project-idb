@@ -19,9 +19,11 @@ import { EmployeerDashboardSidebarComponent } from './employeer-dashboard/employ
 import { EmployeerDashboardSummaryComponent } from './employeer-dashboard/employeer-dashboard-summary/employeer-dashboard-summary.component';
 import { CandidateCvComponent } from './candidate-dashboard/candidate-cv/candidate-cv.component';
 import { AllCompanyJobApplicationsComponent } from './employeer-dashboard/all-company-job-applications/all-company-job-applications.component';
+import { AllEmployeerJobPostComponent } from './employeer-dashboard/all-employeer-job-post/all-employeer-job-post.component';
+import { CreateJobPostComponent } from './employeer-dashboard/create-job-post/create-job-post.component';
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent, CandidateDashboardComponent, EmployeerDashboardComponent, CandidateDashboardSummaryComponent, CandidateDashboardSidebarComponent, EmployeerDashboardSidebarComponent, EmployeerDashboardSummaryComponent, CandidateCvComponent, AllCompanyJobApplicationsComponent],
+  declarations: [DashboardComponent, DashboardHeaderComponent, DashboardFooterComponent, AdminDashboardComponent, AdminDashboardSidebarComponent, AdminDashboardSummaryComponent, ViewUsersComponent, AddUserComponent, UpdateUserComponent, CandidateDashboardComponent, EmployeerDashboardComponent, CandidateDashboardSummaryComponent, CandidateDashboardSidebarComponent, EmployeerDashboardSidebarComponent, EmployeerDashboardSummaryComponent, CandidateCvComponent, AllCompanyJobApplicationsComponent, AllEmployeerJobPostComponent, CreateJobPostComponent],
   imports: [CommonModule, DashboardRoutingModule, FormsModule],
 })
 export class DashboardModule {}

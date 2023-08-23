@@ -1,0 +1,34 @@
+<section id="web-job-category" class="w-full">
+  <div class="space-y-4 bg-white my-6 py-6 rounded-md shadow-lg w-full">
+    <!-- এডমিন সারমর্ম -->
+    <div class="space-y-4 px-12 pb-12">
+      <!-- Heading -->
+      <div class="flex justify-between">
+        <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-briefcase"></i> সকল জব পোস্ট</h2>
+        <h3 *ngIf="loading" class="text-center text-green-600">Loading...</h3>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Single Job post -->
+        <div *ngFor="let job of empJobs" class="flex items-center space-x-4 bg-gray-200 px-4 py-2 rounded-md">
+          <div>
+            <h3><span class="font-bold">জব টাইটেলঃ</span> {{ job.job_title }}</h3>
+            <h3><span class="font-bold">বেতনঃ</span> {{ job.job_title }}</h3>
+            <h3><span class="font-bold">শূন্যপদঃ</span> {{ job.job_vacancy }} টি</h3>
+            <h3><span class="font-bold">ঠিকানাঃ</span> {{ job.job_location }}</h3>
+            <h3><span class="font-bold">চাকুরির ধরনঃ</span> {{ job.job_type }}</h3>
+          </div>
+          <a routerLink="/jobs/job/{{ job.job_id }}"
+            ><h3 class="bg-cyan-900 text-white px-4 py-1 rounded-md"><i class="fa-solid fa-eye"></i> বিস্তারিত</h3></a
+          >
+          <a href="#"
+            ><h3 class="bg-green-600 text-white px-4 py-1 rounded-md"><i class="fa-solid fa-pen-to-square"></i> এডিট</h3></a
+          >
+          <a class="cursor-pointer" (click)="deleteJob(job.job_id)"
+            ><h3 class="bg-red-600 text-white px-4 py-1 rounded-md"><i class="fa-solid fa-trash"></i> ডিলিট</h3></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

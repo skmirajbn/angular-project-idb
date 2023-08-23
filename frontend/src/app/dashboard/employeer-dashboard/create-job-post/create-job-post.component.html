@@ -1,0 +1,59 @@
+<section id="web-job-category" class="">
+  <div class="space-y-4 bg-white my-6 py-6 px-12 rounded-md shadow-lg">
+    <!-- Heading -->
+    <div class="flex justify-between">
+      <h2 class="text-lg font-bold text-blue-950"><i class="fa-solid fa-plus"></i> জব পোস্ট যোগ</h2>
+    </div>
+    <!-- Category List -->
+    <div class="text-gray-700 gap-y-3">
+      <form class="space-y-4" #jobForm="ngForm" (ngSubmit)="createJob(jobForm.value)">
+        <div class="flex flex-col">
+          <label class="text-lg" for="">জব টাইটেল :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="জব টাইটেল প্রবেশ করুন" name="job_title" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">স্যালারি :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="স্যালারি প্রবেশ করুন" name="job_salary" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">শূন্যপদ :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="শূন্যপদ প্রবেশ করুন" name="job_vacancy" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">জব ঠিকানা :</label>
+          <input class="border-2 border-blue-200 py-1 px-2 rounded-md" type="text" placeholder="চাকুরির ঠিকানা প্রবেশ করুন" name="job_location" ngModel />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">চাকুরির ধরন :</label>
+          <select name="job_type" ngModel>
+            <option disabled selected value="0">চাকুরির ধরন সিলেক্ট করুন</option>
+            <option value="Full Time">ফুল টাইম</option>
+            <option value="Half Time">হাফ টাইম</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">ক্যাটাগরি :</label>
+          <select name="category_id" ngModel>
+            <option disabled selected value="0">ক্যাটাগরি সিলেক্ট করুন</option>
+            <option *ngFor="let category of categories" value="{{ category.category_id }}">{{ category.category_name }}</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">কোম্পানি :</label>
+          <select name="company_id" ngModel>
+            <option disabled selected value="0">কম্পানি সিলেক্ট করুন</option>
+            <option *ngFor="let company of companies" value="{{ company.company_id }}">{{ company.company_name }}</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <label class="text-lg" for="">চাকুরির বিস্তারিত :</label>
+          <textarea ngModel class="border-2 border-blue-200 rounded-md" name="job_description" cols="30" rows="10"></textarea>
+        </div>
+
+        <h2 *ngIf="loading" class="text-center text-2xl text-green-700">Submitting..</h2>
+        <h2 class="text-center text-2xl text-green-700">{{ message }}</h2>
+        <button class="block mx-auto bg-cyan-700 text-white py-2 px-4 rounded-md"><i class="fa-solid fa-plus"></i> জব যোগ করুন</button>
+      </form>
+    </div>
+  </div>
+</section>

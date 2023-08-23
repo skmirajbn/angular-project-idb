@@ -12,6 +12,8 @@ import { CandidateGurad } from './dash-services/candidate.guard';
 import { EmployeerGuard } from './dash-services/employeer.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllCompanyJobApplicationsComponent } from './employeer-dashboard/all-company-job-applications/all-company-job-applications.component';
+import { AllEmployeerJobPostComponent } from './employeer-dashboard/all-employeer-job-post/all-employeer-job-post.component';
+import { CreateJobPostComponent } from './employeer-dashboard/create-job-post/create-job-post.component';
 import { EmployeerDashboardSummaryComponent } from './employeer-dashboard/employeer-dashboard-summary/employeer-dashboard-summary.component';
 import { EmployeerDashboardComponent } from './employeer-dashboard/employeer-dashboard.component';
 
@@ -66,6 +68,14 @@ const routes: Routes = [
       {
         path: 'applications',
         component: AllCompanyJobApplicationsComponent,
+      },
+      {
+        path: 'employeer-job-posts',
+        component: AllEmployeerJobPostComponent,
+      },
+      {
+        path: 'create-job-post',
+        component: CreateJobPostComponent,
       },
     ],
   },
